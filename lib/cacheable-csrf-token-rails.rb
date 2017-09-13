@@ -5,7 +5,7 @@ module CacheableCSRFTokenRails
 
     ApplicationController.const_set "TOKEN_PLACEHOLDER", "__CROSS_SITE_REQUEST_FORGERY_PROTECTION_TOKEN__"
     base.class_eval do
-      after_filter  :inject_csrf_token
+      after_action  :inject_csrf_token
 
       private
       def inject_csrf_token
